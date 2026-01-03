@@ -2,6 +2,6 @@
 #define TODO_H
 
 void add_task(const char *title);
-void list_tasks(void);
+void delete_task(int id);
 
 #endif

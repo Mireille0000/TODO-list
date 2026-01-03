@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "./headers/todo.h"
+#include "./headers/storage.h"
 
 int main() {
-    printf("ToDo application");
+    load_todo_list();
     return 0;
 }

@@ -12,3 +12,14 @@ You can:
 - Delete.
 
 ## How to compile?
+In your terminal run the following command:
+
+```bash
+gcc -Iheaders main.c todo.c storage.c -o todo. 
+```
+
+To run the compiled exe file executable:
+
+```bash
+ ./todo
+ ```
