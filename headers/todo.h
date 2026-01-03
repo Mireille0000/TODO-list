@@ -1,7 +1,11 @@
 #ifndef TODO_H
 #define TODO_H
 
-void add_task(const char *title);
-void delete_task(int id);
+#include "todo_types.h"
+
+void add_task(TodoList *list, const char *task);
+void list_tasks(TodoList *list);
+void update_task(TodoList *list, int id, const char *updated_text);
+void delete_task(TodoList *list, int id);
 
 #endif

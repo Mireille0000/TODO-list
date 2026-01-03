@@ -3,6 +3,6 @@
 #include "./headers/storage.h"
 
 int main() {
-    load_todo_list();
+    printf("TODO application \n");
     return 0;
 }
