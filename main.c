@@ -4,10 +4,10 @@
 #include "./headers/todo_types.h"
 
 int main() {
-    TodoList list = {};
+    TodoList list = {0};
     add_task(&list, "Create add task function");
+    add_task(&list, "Create list tasks function");
     printf("TODO application \n");
-    printf("%p \n", &list);
-    printf("%s \nDone: %s \n", list.todos[0].task, list.todos[0].done ? "[x]" : "[ ]");
+    list_tasks(&list);
     return 0;
 }

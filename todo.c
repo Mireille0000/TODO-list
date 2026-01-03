@@ -19,7 +19,10 @@ void add_task(TodoList *list, const char *task) {
 }
 
 void list_tasks(TodoList *list) {
-    // To implement
+    int i = 0;
+    for(i; i < list->count; i++) {
+        printf("Id: %d\nTask: %s\nDone: %s\n\n",list->todos[i].id, list->todos[i].task, list->todos[i].done ? "[x]" : "[ ]");
+    }
 }
 
 void update_task(TodoList *list, int id, const char *updated_text) {
