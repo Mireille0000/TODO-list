@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "./headers/todo_types.h"
 #include "./headers/todo.h"
 
@@ -29,6 +30,7 @@ void update_task(TodoList *list, int id, const char *updated_text) {
     Todo *t = &list->todos[id];
     int len_new_text = strlen(updated_text);
     char new_text[LEN_TASK] = {};
+
     if (len_new_text + 1 <= LEN_TASK) {
         strcpy(new_text, updated_text);
     }
@@ -38,10 +40,27 @@ void update_task(TodoList *list, int id, const char *updated_text) {
             t->task[i] = new_text[i];
         }
     }
-
     t->task[len_new_text] = '\0';
 }
 
 void delete_task(TodoList *list, int id){
-    // To implement
+    if (list->count == 0) {
+        return;
+    }
+
+    if (id > list->count-1) {
+        return;
+    }
+
+    int i = 0;
+    for (i; i < list->count - 1; i++) {
+       if(i >= id) {
+            list->todos[i] = list->todos[i + 1];
+        } 
+    }
+
+    list->count--;
 }
+
+
+//  add mark_as_done function
