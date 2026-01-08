@@ -9,6 +9,7 @@ int main() {
     add_task(&list, "Create list tasks function");
     add_task(&list, "Create delete task function");
     delete_task(&list, 1);
+    mark_done(&list, 0);
     list_tasks(&list);
     return 0;
 }
