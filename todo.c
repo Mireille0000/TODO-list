@@ -62,7 +62,6 @@ void delete_task(TodoList *list, int id){
     list->count--;
 }
 
-// To test later
 void mark_done(TodoList *list, int id) {
     if (list->count == 0) {
         return;
