@@ -7,6 +7,5 @@ void save_todo_list(const TodoList *list, const char *file){
 }
 
 void load_todo_list(TodoList *list, const char *file) {
-    printf("To implement");
     // To implement
 }

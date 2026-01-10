@@ -18,7 +18,7 @@ In your terminal run the following command:
 gcc -Iheaders main.c todo.c storage.c -o todo. 
 ```
 
-To run the compiled exe file executable:
+To run the compiled executable:
 
 ```bash
  ./todo
