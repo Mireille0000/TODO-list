@@ -5,6 +5,7 @@
 
 int main() {
     TodoList list = {0};
+    load_todo_list(&list, "todo.txt");
     add_task(&list, "Create add task function");
     add_task(&list, "Create list tasks function");
     mark_done(&list, 0);
