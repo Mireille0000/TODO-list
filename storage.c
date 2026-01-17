@@ -21,7 +21,7 @@ void load_todo_list(TodoList *list, const char *file) {
     FILE *todo_list;
     todo_list = fopen(file, "r");
     if(todo_list == NULL) {
-        printf("File does not exist");
+        printf("File does not exist\n");
         return;
     }
 
@@ -38,13 +38,19 @@ void load_todo_list(TodoList *list, const char *file) {
         }
         int task_len = task - todos_storage;
 
+        if(task_len > 0 && todos_storage[task_len - 1] == ' ') {
+            task_len--;
+        }
+
+        if(task_len >= LEN_TASK) {
+            task_len = LEN_TASK - 1;
+        }
+
         char task_to_load[LEN_TASK];
         strncpy(task_to_load, todos_storage, task_len);
         task_to_load[task_len] = '\0';
         strncpy(list->todos[list->count].task, task_to_load, task_len);
-        if (list->todos[list->count].task[task_len - 1] == '\n'){
-            list->todos[list->count].task[task_len - 1] = '\0';
-        }
+        list->todos[list->count].task[task_len] = '\0';
         
         char *done = task + 1;
         while (*done == ' ') done++;
