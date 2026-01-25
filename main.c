@@ -40,7 +40,7 @@ int main() {
             printf("Enter task ID to update: \n");
             scanf("%d", &id);
             getchar();
-            
+
             printf("Enter new text: \n");
             fgets(updated_text, LEN_TASK, stdin);
             updated_text[strcspn(updated_text, "\n")] = '\0';
@@ -49,10 +49,18 @@ int main() {
         case 4:
             printf("Done\n");
             printf("Enter task ID to mark as done: \n");
+            scanf("%d", &id);
+            getchar();
+
+            mark_done(&list, id);
             break;
         case 5:
             printf("Delete\n");
             printf("Enter task ID to delete: \n");
+            scanf("%d", &id);
+            getchar();
+
+            delete_task(&list, id);
             break;
         case 0:
             printf("Save and close\n");
@@ -63,6 +71,5 @@ int main() {
             break;
         }
     }
-    // mark_done(&list, 0);
     return 0;
 }
