@@ -61,6 +61,7 @@ void delete_task(TodoList *list, int id){
        if(i >= id) {
             list->todos[i] = list->todos[i + 1];
         } 
+        list->todos[i].id = i;
     }
 
     list->count--;
